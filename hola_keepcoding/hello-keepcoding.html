@@ -1,0 +1,22 @@
+<template>
+	<p>Hello, <strong></strong></p>
+</template>
+
+<script>
+	(function (window, document) {
+		var documentImporter 		= document,
+			documentToImport 		= (documentImporter._currentScript || documentImporter.currentScript),
+			template 		 		= documentToImport.querySelector('template').content,
+			PrototypeForMyElement	= Object.create(HTMLElement.prototype);
+
+			PrototypeForMyElement.who = "Keepcoding";
+
+		PrototypeForMyElement.createdCallback = function () {
+			var shadowRoot 	= this.createShadowRoot(),
+				clone		= documentImporter.importNode(template, true);
+
+			shadowRoot.appendChild(clone);
+			this.strong = shadowRoot.querySelector("strong");
+		}
+	})(window, document);
+</script>
