@@ -1,0 +1,18 @@
+{
+  "name": "hola_keepcoding",
+  "homepage": "https://github.com/frisinacho/Polymer-Keepcoding",
+  "authors": [
+    "Ignacio Lasaosa Sáez <frisinacho@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
