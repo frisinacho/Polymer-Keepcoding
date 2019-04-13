@@ -7,16 +7,40 @@
 		var documentImporter 		= document,
 			documentToImport 		= (documentImporter._currentScript || documentImporter.currentScript),
 			template 		 		= documentToImport.querySelector('template').content,
-			PrototypeForMyElement	= Object.create(HTMLElement.prototype);
+			prototypeForMyElement	= Object.create(HTMLElement.prototype);
 
-			PrototypeForMyElement.who = "Keepcoding";
+			prototypeForMyElement.who = "Keepcoding";
 
-		PrototypeForMyElement.createdCallback = function () {
+		prototypeForMyElement.createdCallback = function () {
 			var shadowRoot 	= this.createShadowRoot(),
 				clone		= documentImporter.importNode(template, true);
 
 			shadowRoot.appendChild(clone);
 			this.strong = shadowRoot.querySelector("strong");
-		}
+
+			if (this.hasAttribute("who")) {
+				var who = this.getAttribute("who");
+				this.setWho(who);
+			} else {
+				this.setWho(this.who);
+			}
+		};
+
+		prototypeForMyElement.attributeChangedCallback = function (attr, oldValue, newValue) {
+			if (attr == "who") {
+				this.setWho(newValue);
+			}
+
+		};
+
+		prototypeForMyElement.setWho = function (value) {
+			this.who = value;
+			this.strong.textContent = this.who;
+		};
+
+		window.myElement = documentImporter.registerElement("hello-keepcoding", {
+			prototype: prototypeForMyElement
+		});
+
 	})(window, document);
 </script>
