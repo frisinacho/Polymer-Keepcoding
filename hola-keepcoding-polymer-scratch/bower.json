@@ -1,0 +1,22 @@
+{
+  "name": "hola-keepcoding-polymer-scratch",
+  "homepage": "https://github.com/frisinacho/Polymer-Keepcoding",
+  "authors": [
+    "Ignacio Lasaosa Sáez <frisinacho@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^2.2.8",
+    "polymer": "^3.2.0"
+  }
+}
