@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^2.2.8",
-    "polymer": "^3.2.0"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.7.24",
+    "polymer": "^1.8.0"
   }
 }
