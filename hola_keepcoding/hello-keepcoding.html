@@ -5,7 +5,8 @@
 <script>
 	(function (window, document) {
 		var documentImporter 		= document,
-			documentToImport 		= (documentImporter._currentScript || documentImporter.currentScript),
+			documentToImport 		= (documentImporter._currentScript || documentImporter.currentScript)
+				.ownerDocument,
 			template 		 		= documentToImport.querySelector('template').content,
 			prototypeForMyElement	= Object.create(HTMLElement.prototype);
 
